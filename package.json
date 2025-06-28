@@ -1,0 +1,23 @@
+{
+  "name": "pic2plate",
+  "version": "1.0.0",
+  "description": "A recipe recommendationapp leveraging GeminiAI",
+  "main": "server/server.js",
+  "scripts": {
+  "install": "npm install --prefix client && npm install --prefix server",
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\""
+  },
+  "keywords": [
+    "Reactjs",
+    "Expressjs",
+    "Nodejs",
+    "GeminiAI"
+  ],
+  "author": "Fabricio Guacuto",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "dotenv": "^17.0.0"
+  }
+}
