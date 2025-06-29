@@ -6,7 +6,7 @@
   "scripts": {
   "install": "npm install --prefix client && npm install --prefix server",
   "test": "echo \"Error: no test specified\" && exit 1",
-  "start": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\""
+  "start": "concurrently \"npm run start --prefix client\" \"npm run start --prefix server\""
   },
   "keywords": [
     "Reactjs",
