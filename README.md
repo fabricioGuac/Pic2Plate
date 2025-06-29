@@ -22,11 +22,11 @@ N/A
 
 ## Screenshot displaying the deployed app
 
-![Screenshot of the app]()
+![mexican food recomendations](./client/public/Screenshot%202025-06-28%20230155.png)
 
 ## URL to the deployed app
 
-
+https://pic2plate.onrender.com/
 
 ## Credits
 
