@@ -17,14 +17,18 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+app.use('/api', routes);
+
 // Serve up static assets
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/dist')));
+    const clientPath = path.join(__dirname, '../client/dist');
+    app.use(express.static(clientPath));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(clientPath, 'index.html'));
+    });
 }
-
-
-//Set up the routes
-app.use(routes);
 
 
 // Start the server
