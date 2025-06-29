@@ -1,0 +1,169 @@
+/* Box sizing reset for layout consistency */
+* {
+    box-sizing: border-box;
+}
+
+/* Make the whole viewport have beige background and center content */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f0dbb2;
+    font-family: Arial, sans-serif;
+    color: rgb(252, 252, 252);
+}
+
+/* Center app content and limit max width */
+.app {
+    min-height: 100vh;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Style h1 title */
+.app>h1 {
+    background-color: #917447;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Section wrappers */
+.image-input-container,
+.recipe-list-container {
+    background-color: #917447;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Hide default file inputs */
+input[type="file"] {
+    display: none;
+}
+
+/* Style labels as buttons */
+label[for="ingredients_img"],
+label[for="cameraInput"] {
+    background-color: #917447;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+    text-align: center;
+    width: fit-content;
+}
+
+label[for="ingredients_img"]:hover,
+label[for="cameraInput"]:hover {
+    background-color: #6f5932;
+}
+
+/* Image preview */
+.image-preview {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Upload button */
+.image-input-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #6f5932;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.image-input-container button:hover:enabled {
+    background-color: #5a4729;
+}
+
+/* Error message */
+.image-input-container p {
+    color: #fff0e0;
+    margin: 0;
+    text-align: center;
+}
+
+/* Recipe list layout */
+.recipe-list-container {
+    gap: 20px;
+}
+
+/* Recipe card */
+.recipe-card {
+    background-color: #f5e4c3;
+    color: #333;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    width: 100%;
+}
+
+.recipe-card:hover {
+    transform: scale(1.02);
+}
+
+.recipe-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.recipe-card p {
+    margin: 6px 0;
+    line-height: 1.4;
+}
+
+.recipe-card strong {
+    color: #6e4d1d;
+}
+
+/* Hide the camera input on non-mobile */
+@media (min-width: 700px) {
+
+    label[for="cameraInput"],
+    #cameraInput {
+        display: none;
+    }
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+    .app>h1 {
+        font-size: 1.5rem;
+        padding: 10px 20px;
+    }
+
+    .recipe-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .recipe-card p,
+    .image-input-container button,
+    label[for="ingredients_img"],
+    label[for="cameraInput"] {
+        font-size: 0.95rem;
+    }
+}

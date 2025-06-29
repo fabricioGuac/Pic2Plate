@@ -1,16 +1,22 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import ImageInput from './components/ImageInput';
+import RecipeList from './components/RecipeList';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [recipes, setRecipes] = useState([]);
 
   return (
-    <>
-      
-    </>
-  )
-}
+    <div className="app">
+      <h1>Pic2Plate 🍽️</h1>
+      <div className="image-input-container">
+        <ImageInput setRecipes={setRecipes} />
+      </div>
+      <div className="recipe-list-container">
+        <RecipeList recipes={recipes} />
+      </div>
+    </div>
+  );
+};
+
 
 export default App
